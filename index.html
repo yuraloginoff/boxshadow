@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" ng-app="Boxshadow">
+<head>
+  <meta charset="utf-8">
+  <title>Box-shadow CSS3 property generator</title>
+  <meta name="description" content="Box-shadow CSS3 property generator"></meta>
+  <meta name="keywords" content="css3, box shadow, css3 box shadow, box-shadow, webkit box shadow, firefox box shadow"></meta>
+  <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet'>
+  <!-- <link rel="stylesheet" href="css/normalize.css"/> -->
+  <link rel="stylesheet" href="css/foundation.css"/>
+  <link rel="stylesheet" href="css/colorpicker.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-controller="BoxshadowController">
+  <div class="wrap">
+    <div class="main">
+      <div class="row header">
+        <div class="column small-12">
+          <div class="logo"><a href="/">box shadow</a></div>
+          <div class="description">CSS3 box-shadow property generator</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column small-9 small-centered output" style="{{output}}">
+          <textarea class="console" ng-model="output" select-on-click></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column small-9 small-centered">
+          <div class="row">
+
+            <div class="column small-5 setup" ng-repeat="item in shadows">
+              <a href="" ng-click="shadows.splice($index, 1)" ng-show="shadows.length > 1" class="delete">&times;</a>
+              <form class="setupForm" name="setupForm">
+                <div class="row">
+                  <div class="small-7 columns">
+                    <label for="hor" class="right">Horizontal length:</label>
+                  </div>
+                  <div class="small-5 columns">
+                    <input type="number" class="number" size="5" ng-model="item.hor" id="hor">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="small-7 columns">
+                    <label for="vert" class="right">Vertical length:</label>
+                  </div>
+                  <div class="small-5 columns">
+                    <input type="number" class="number" size="5" ng-model="item.vert" id="vert">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="small-7 columns">
+                    <label for="blur" class="right">Blur radius: </label>
+                  </div>
+                  <div class="small-5 columns">
+                    <input type="number" class="number" size="5" ng-model="item.blur" id="blur">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="small-7 columns">
+                    <label for="right-label" class="right">Spread:</label>
+                  </div>
+                  <div class="small-5 columns">
+                    <input type="number" class="number" size="5" ng-model="item.spread" id="spread">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="small-7 columns">
+                    <label for="colormode" class="right">Color mode:</label>
+                  </div>
+                  <div class="small-5 columns">
+                    <select ng-model="item.colorModeSelected.type" 
+                            ng-options="option.value as option.label for option in item.colorModes"
+                            ng-change="opacityVisible=!opacityVisible" id="colormode">
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="small-7 columns">
+                    <label for="picker" class="right">Color:</label>
+                  </div>
+                  <div class="small-5 columns">
+                    <input colorpicker="hex" type="text" size="6" id="picker" 
+                      ng-model="item.colorHex" style="border: 1px solid {{item.colorHex}}">
+                  </div>
+                </div>
+
+                <div class="row" ng-show="opacityVisible">
+                  <div class="small-7 columns">
+                    <label for="opacity" class="right">Opacity:</label>
+                  </div>
+                  <div class="small-5 columns">
+                    <input id="opacity" type="range" min="0" max="1" step="0.01" ng-model="item.opacity" id="opacity">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="small-7 columns">
+                    <label for="inset" class="right">Inset</label>
+                  </div>
+                  <div class="small-5 columns">
+                    <input type="checkbox" ng-model="item.inset" id="inset">
+                  </div>
+                </div>
+              </form>          
+            </div>
+
+            <div class="column small-2 end addWrap">
+              <a href="" ng-click="add()" class="add">Add shadow</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="row">
+      <div class="column small-9 small-centered">
+        <div class="row">
+          <div class="column small-8">
+            <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+            <div class="yashare-auto-init" data-yashareL10n="en" data-yashareType="link" 
+              data-yashareQuickServices="vkontakte,facebook,twitter,gplus,surfingbird"></div> 
+          </div>
+
+          <div class="column small-4">
+            <div class="copy">
+              app by <a href="http://yuraloginoff.com">Yura Loginov</a>
+            </div>            
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/lib/angular.min.js"></script>
+  <script src="js/lib/bootstrap-colorpicker-module.js"></script>  
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24906923-3']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

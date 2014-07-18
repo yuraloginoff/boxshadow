@@ -1,0 +1,27 @@
+a::-moz-focus-inner { border: 0; }
+.colorpicker { background: #fff; border-radius: 2px; border: 1px solid #ccc; }
+.colorpicker .dropdown-menu { min-width: 120px; }
+#picker { cursor: pointer; }
+.header { text-align: center; padding: 50px 0; }
+.logo { font-family: 'Dancing Script', Georgia, serif; font-size: 50px; line-height: 1; font-weight: 700; }
+.logo a { color: #6f6f6f; text-decoration: none; }
+.description { font-size: 12px; color: #808080; }
+.output { background: url('../img/bg.png') 0 0 repeat; border: 1px solid #e9e9e9; margin-bottom: 50px; padding: 30px; }
+.console { margin: 0; height: 100px; resize: vertical; font-family: "Courier New", Monaco, monospace; }
+.setup { /*margin-bottom: 10px;*/ padding-left: 0; min-height: 292px;}
+.setup label { margin-bottom: 0; padding-top: 2px; }
+.setup input,
+.setup select { margin-bottom: 4px; height: auto; padding: 4px; }
+#inset { margin-top: 6px; }
+#opacity { padding: 0; float: right; height: 21px; margin: 3px 0 0 0; width: 92px; padding: 0; }
+.setupForm { padding: 25px 15px 15px 15px; border: 1px solid #ccc; border-radius: 3px; }
+.delete { position: absolute; font-size: 22px; color: #999; right: 20px; top: 2px; }
+.delete:hover { color: #999; }
+.addWrap { height: 221px; position: relative; }
+.add { display: inline-block; width: 50px; height: 50px; background: url('../img/plus.png') 0 0 no-repeat; text-indent: -9999px; position: absolute; left: 50%; top: 50%; margin-left: -25px; margin-top: -15px; }
+.wrap { min-height: 100%; }
+.main { overflow: auto; padding-bottom: 50px; }
+.footer { position: relative; margin-top: -50px; height: 50px; clear: both; border: 1px solid #ccc; padding-top: 10px; color: #666; }
+.footer a { color: #666; }
+.footer a:hover { text-decoration: underline; }
+.copy { padding-top: 6px; font-size: 85%; text-align: right; }
