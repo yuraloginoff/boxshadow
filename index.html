@@ -16,7 +16,7 @@
     <div class="main">
       <div class="row header">
         <div class="column small-12">
-          <div class="logo"><a href="/">box shadow</a></div>
+          <div class="logo"><a href="">box shadow</a></div>
           <div class="description">CSS3 box-shadow property generator</div>
         </div>
       </div>
@@ -75,7 +75,7 @@
                     <label for="colormode" class="right">Color mode:</label>
                   </div>
                   <div class="small-5 columns">
-                    <select ng-model="item.colorModeSelected.type" 
+                    <select ng-model="item.colorModeSelected.type"
                             ng-options="option.value as option.label for option in item.colorModes"
                             ng-change="opacityVisible=!opacityVisible" id="colormode">
                     </select>
@@ -87,7 +87,7 @@
                     <label for="picker" class="right">Color:</label>
                   </div>
                   <div class="small-5 columns">
-                    <input colorpicker="hex" type="text" size="6" id="picker" 
+                    <input colorpicker="hex" type="text" size="6" id="picker"
                       ng-model="item.colorHex" style="border: 1px solid {{item.colorHex}}">
                   </div>
                 </div>
@@ -109,7 +109,7 @@
                     <input type="checkbox" ng-model="item.inset" id="inset">
                   </div>
                 </div>
-              </form>          
+              </form>
             </div>
 
             <div class="column small-2 end addWrap">
@@ -128,14 +128,14 @@
         <div class="row">
           <div class="column small-8">
             <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
-            <div class="yashare-auto-init" data-yashareL10n="en" data-yashareType="link" 
-              data-yashareQuickServices="vkontakte,facebook,twitter,gplus,surfingbird"></div> 
+            <div class="yashare-auto-init" data-yashareL10n="en" data-yashareType="link"
+              data-yashareQuickServices="vkontakte,facebook,twitter,gplus,surfingbird"></div>
           </div>
 
           <div class="column small-4">
             <div class="copy">
-              app by <a href="http://yuraloginoff.com">Yura Loginov</a>
-            </div>            
+              app by <a href="/">Yura Loginov</a>
+            </div>
           </div>
         </div>
 
@@ -146,7 +146,7 @@
 
 
   <script src="js/lib/angular.min.js"></script>
-  <script src="js/lib/bootstrap-colorpicker-module.js"></script>  
+  <script src="js/lib/bootstrap-colorpicker-module.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
